@@ -1,4 +1,6 @@
 const choices = ['rock', 'paper', 'scissors']
+let humanScore = 0
+let computerScore = 0
 
 function getComputerChoice() {
 
@@ -31,5 +33,40 @@ function getHumanChoice() {
 }
 
 // console.log(getHumanChoice())
+
+function playRound(humanChoice, computerChoice){
+    if (humanChoice === choices[0] && computerChoice === choices[3]) {
+        humanScore++;
+        return console.log(`You win! Rock beats scissors. Score: You - ${humanScore}, Computer - ${computerScore}`)
+    }
+    else if (humanChoice === choices[1] && computerChoice === choices[0]) {
+        humanScore++;
+        return console.log(`You win! Paper beats rock. Score: You - ${humanScore}, Computer - ${computerScore}`)
+    }
+    else if (humanChoice === choices[2] && computerChoice === choices[1]) {
+        humanScore++;
+        return console.log(`You win! Scissors beats paper. Score: You - ${humanScore}, Computer - ${computerScore}`)
+    }
+    if (computerChoice === choices[0] && humanChoice === choices[3]) {
+        computerScore++;
+        return console.log(`You lose... Rock beats scissors. Score: You - ${humanScore}, Computer - ${computerScore}`)
+    }
+    else if (computerChoice === choices[1] && humanChoice === choices[0]) {
+        computerScore++;
+        return console.log(`You lose... Paper beats rock. Score: You - ${humanScore}, Computer - ${computerScore}`)
+    }
+    else if (computerChoice === choices[2] && humanChoice === choices[1]) {
+        computerScore++;
+        return console.log(`You lose... Scissors beats paper. Score: You - ${humanScore}, Computer - ${computerScore}`)
+    }
+    else {
+        return console.log("A tie! Take another turn")
+    }
+}
+
+//play game 5 times
+for (i = 1; i <=5; i++) {
+    playRound(getComputerChoice(), getHumanChoice())
+}
 
 
