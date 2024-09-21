@@ -17,13 +17,13 @@ function getHumanChoice() {
 
     let huChoice = parseInt(prompt('Rock (1), Paper (2), or Scissors (3)? Please choose the corresponding number of your choice:'));
 
-    if (huChoice === 0) {
+    if (huChoice === 1) {
         return choices[0];
     }
-    else if (huChoice === 1) {
+    else if (huChoice === 2) {
         return choices[1];
     }
-    else if (huChoice === 2) {
+    else if (huChoice === 3) {
         return choices[2];
     }
     else {
@@ -67,6 +67,10 @@ function playRound(humanChoice, computerChoice){
 //play game 5 times
 for (i = 1; i <=5; i++) {
     playRound(getComputerChoice(), getHumanChoice())
+
+    if (i === 5){
+        console.log("END OF GAME")
+    }
 }
 
 
