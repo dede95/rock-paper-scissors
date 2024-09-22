@@ -4,8 +4,7 @@ let computerScore = 0
 
 function getComputerChoice() {
 
-    // times random (0 to 1) by the length of array and get floor, 
-    //giving the values, 0,1 or 2 - represents the choices!
+    // Randomly select from 0, 1 and 2 - using math.random and math.floor - correspondiong to the orfer of choices
     let cpChoice = Math.floor(Math.random() * choices.length);
 
     return choices[cpChoice];
@@ -15,6 +14,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
 
+    // Prompts user to input number corresponding to choice and to submit the choice 
     let huChoice = parseInt(prompt('Rock (1), Paper (2), or Scissors (3)? Please choose the corresponding number of your choice:'));
 
     if (huChoice === 1) {
@@ -35,6 +35,8 @@ function getHumanChoice() {
 // console.log(getHumanChoice())
 
 function playRound(humanChoice, computerChoice){
+    // Compares the human and computer choices to decide who wins, following the rules of Rock, Paper, Scissors
+
     if (humanChoice === choices[0] && computerChoice === choices[3]) {
         humanScore++;
         return console.log(`You win! Rock beats scissors. Score: You - ${humanScore}, Computer - ${computerScore}`)
@@ -66,10 +68,10 @@ function playRound(humanChoice, computerChoice){
 
 //play game 5 times
 for (i = 1; i <=5; i++) {
-    playRound(getComputerChoice(), getHumanChoice())
+    playRound(getComputerChoice(), getHumanChoice());
 
     if (i === 5){
-        console.log("END OF GAME")
+        console.log("END OF GAME");
     }
 }
 
